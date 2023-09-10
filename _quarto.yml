@@ -1,0 +1,35 @@
+project:
+  type: website
+
+website:
+  title: "PORTFOLIO | Samuel Polzin"
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - href: index.qmd
+        text: Home
+      - href: publications/index.qmd
+        text: Publications
+      - section: "Projects"
+        contents:
+        - href: projects/index.qmd
+          text: Web scraping 
+
+    tools:
+      - icon: linkedin
+        href: https://www.linkedin.com/in/sspolzin/
+      - icon: envelope
+        aria-label: email
+        href: "mailto:sam.polzin@gmail.com"  
+
+format:
+  html:
+    theme:
+      light: journal
+      dark: slate
+    css: styles.css
+    toc: true
+
+editor: visual
+

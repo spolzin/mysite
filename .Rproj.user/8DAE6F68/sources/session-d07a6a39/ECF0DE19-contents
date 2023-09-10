@@ -1,0 +1,26 @@
+library(tidyverse)
+library(stringr)
+
+only99  <- read_csv("99only.csv")
+dollarG <- read_csv("dollarGeneral.csv")
+dollarT <- read_csv("dollarTree.csv")
+familyD <- read_csv("familyDollar.csv")
+
+dollarG <- dollarG[,-5]
+dollarT <- dollarT[,-c(1,6)]
+
+only99$id <- c("99 Cents Only")
+dollarG$id <- c("Dollar General")
+dollarT$id <- c("Dollar Tree")
+familyD$id <- c("Family Dollar")
+
+df <- rbind(dollarG, dollarT, familyD, only99)
+
+df$zip <- str_pad(df$zip, max(nchar(df$zip)), side = "right", pad = "0")
+df$zip <- str_sub(df$zip, 1, str_length(df$zip)-5)
+
+df <- df %>%
+  group_by(zip) %>%
+  mutate(n = n())
+
+write_csv(df, "dollarStores.csv")
