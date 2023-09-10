@@ -2,7 +2,7 @@
 sidebar: true
 ---
 
-I mapped every dollar store in Massachusetts over county level food insecurity rates. To collect these locations, I had to scrape each address from the store directories of the biggest dollar store chains in the country. I've shared a sample of the scraping code here.
+I mapped every dollar store in Massachusetts alongside county level food insecurity rates. To collect these locations, I had to scrape each address from the store directories of the biggest dollar store chains in the country. I've shared a sample of the scraping code here.
 
 ```{r}
 #| echo: false
