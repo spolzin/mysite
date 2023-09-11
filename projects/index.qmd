@@ -22,8 +22,6 @@ foodsecurity <- foodsecurity %>% filter(State == "MA" & Year == 2020)
 colnames(foodsecurity)[5] ="food_insecurity_rate"
 foodsecurity$FIPS <- as.character(foodsecurity$FIPS)
 
-register_google(key="AIzaSyDlyjiA43X2yEuaBld_oiW6DK7F4ZoeP_U")
-
 # Download shapefile of MA counties
 ma_sf <- 
   st_read(
